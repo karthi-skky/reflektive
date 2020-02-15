@@ -32,7 +32,7 @@ class AWS_Services():
                 for instance in reservation['Instances']:
                     ec2_instance_dict = {
                     "instanceID": instance["InstanceId"],
-                    "instancePrivateIp": instance["PrivateIpAddress"],
+                    "instanceType": instance["InstanceType"],
                     "status": instance["State"]["Name"],
                     "AZ": instance["Placement"]["AvailabilityZone"]
                     }
@@ -46,7 +46,7 @@ class AWS_Services():
                     ec2_pretty.add_row(ec2.values())
                 return ec2_pretty
             else:
-                return "no instances are running"
+                return "no instances are running in {}".format(self.region)
         else:
             return "error in fetching instance details"
 
@@ -73,6 +73,6 @@ class AWS_Services():
                     rds_pretty.add_row(rds.values())
                 return rds_pretty
             else:
-                return "no rds instaces available"
+                return "no rds instaces available in {}".format(self.region)
         else:
             return "error in fetching db details"

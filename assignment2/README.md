@@ -8,7 +8,7 @@ So used spring music java app. https://github.com/cloudfoundry-samples/spring-mu
 1. git clone https://github.com/karthikr87/reflektive.git
 ### EC2 instance will need ssh keys during deployment. To generate
 2. ssh-keygen ( generate withour passphrase )
-3. enable agent forwarding "ssh-add ~/.ssh/you_key_name" this step requires to connect instance in private subnet via jumpbox
+3. enable agent forwarding "ssh-add ~/.ssh/you_private_key_name" this step requires to connect instance in private subnet via jumpbox
 ### To add the key location in terraform script
 4. cd assignment2/three_tier_web/
 5. open jumpbox.tf in any editor
